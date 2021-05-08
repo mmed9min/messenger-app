@@ -1,9 +1,19 @@
+import { Card, Typography } from '@material-ui/core'
 import React from 'react'
+import './message.css'
 
-function Message(props) {
+function Message({username,message}) {
+
+    const isUser = username === message.username;
     return (
         <div>
-            <h2>{props.text}</h2>
+            <div id="message" className={isUser ? 'user_message' : 'guest_message'} variant="outlined">
+                
+                    <Typography>
+                       <p>{message.username}: {message.text}</p>
+                    </Typography>
+               
+            </div>
         </div>
     )
 }

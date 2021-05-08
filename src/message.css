@@ -1,0 +1,14 @@
+#message{
+    margin: 10px;
+    width: fit-content;
+}
+
+.user_message{
+    background-color: #0b81ff !important;   
+    margin-left: auto !important;
+    padding: 0px 10px 0px 10px !important;
+}
+.guest_message{
+    background-color: #e9e9eb !important;
+    padding: 0px 10px 0px 10px !important;
+}
