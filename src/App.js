@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message'
 import db from './firebase';
+import firebase from 'firebase'
 
 function App() {
 
@@ -23,13 +24,20 @@ function App() {
 
   //This useEffect (a listner) will take a picture of the DB every single time the component load and put the data in the messages array
   useEffect(() => {
-    db.collection('messages').onSnapshot(snapshot => {
+    db.collection('messages')
+    .orderBy('timestamp', 'desc')
+    .onSnapshot(snapshot => {
       setMessages(snapshot.docs.map(doc => doc.data()))
     })
   }, [])
 
   const sendMessage = (e) =>{
     e.preventDefault();
+    db.collection('messages').add({
+      message : input,
+      username : username,
+      timestamp : firebase.firestore.FieldValue.serverTimestamp()
+    })
     setMessages([...messages , {username : username, message: input}])
     setInput('')
   }
@@ -40,6 +48,13 @@ function App() {
     <div className="App">
       <h1>Messenger-App</h1>
       <h2>Hello {username}</h2>
+      <form>
+          <FormControl>
+            <InputLabel>Enter a message ...</InputLabel>
+            <Input value={input} onChange={e =>setInput(e.target.value)} />
+            <Button type="submit" color="primary" variant="contained" disabled={!input}  onClick={sendMessage}>Send</Button>
+          </FormControl>
+      </form>
       
 
 
@@ -48,14 +63,6 @@ function App() {
           <Message username={username} message = {message} />
         ))
       }
-
-      <form>
-          <FormControl>
-            <InputLabel>Enter a message ...</InputLabel>
-            <Input value={input} onChange={e =>setInput(e.target.value)} />
-            <Button type="submit" color="primary" variant="contained" disabled={!input}  onClick={sendMessage}>Send</Button>
-          </FormControl>
-      </form>
     </div>
 
     
