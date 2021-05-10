@@ -2,8 +2,9 @@
 
 
 #message{
-    margin: 20px;
+    margin: 15px;
     width: fit-content;
+    max-width: 300px;
 }
 
 .user_message{
@@ -13,7 +14,6 @@
     margin-bottom: 10px;
     margin-left: calc(100% - 240px);
     padding: 10px;
-    max-width: 400px;
     min-height: 30px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
@@ -26,7 +26,6 @@
     margin-left: 20px;
     margin-bottom: 10px;
     padding: 10px !important;
-    max-width: 400px;
     min-height: 30px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
