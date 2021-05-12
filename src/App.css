@@ -11,7 +11,7 @@ p{
 }
 
 .messages__area{
-  max-height: 460px;
+  max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
   width: 50%;

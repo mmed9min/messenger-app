@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect, useState, useRef} from 'react';
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+import {  FormControl, Input } from '@material-ui/core';
 import Message from './Message'
 import db from './firebase';
 import firebase from 'firebase'
