@@ -10,10 +10,16 @@ const Message = forwardRef (({username,message}, ref) => {
             <div ref= {ref} id="message" className={isUser ? 'user_message' : 'guest_message'} variant="outlined">
                 
                     <Typography>
-                       <p>{message.username}: {message.message}</p>
+                       {
+                        isUser ? <p>{message.message}</p>
+                        :<p><b>{message.username}:</b> {message.message}</p>
+                       } 
                     </Typography>
                
             </div>
+          
+        
+            
     )   
 })
 

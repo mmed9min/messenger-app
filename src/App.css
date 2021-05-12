@@ -1,9 +1,9 @@
 .App {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
+
   align-items: center;
+  text-align: center;
 }
 
 p{
@@ -11,12 +11,14 @@ p{
 }
 
 .messages__area{
-  max-height: 410px;
-  min-width: 600px;
+  max-height: 460px;
   overflow-y: scroll;
   overflow-x: hidden;
-  align-self: center;
+  width: 50%;
+  flex:1;
+
 }
+
 
 
 
@@ -31,4 +33,62 @@ p{
   flex-direction: row;
   justify-content: center;
   margin: 0 5px -20px 5px;
+}
+
+form{
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+}
+.form{
+  position: absolute;
+  bottom: 0;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.app__input{
+  flex: 1;
+  background-color: rgb(238, 238, 238);
+  border-radius: 25px;
+  padding: 0px 20px 0px 15px;
+  border: none !important;
+  outline: unset;
+}
+
+
+.app__btn{
+  flex: 0;
+}
+
+@media screen  and (max-width: 768px) {
+  .messages__area{
+    width: 100%;
+  }
+  form{
+    width: 95%;
+  }
+  p{
+    font-size: 15px;
+  }
+  .messages__area{
+    max-height: 435px;
+  }
+  h1{
+    font-size: 22px;
+  }
+  h2{
+    font-size: 19px;
+    margin-top: 20px;
+  }
+}
+
+@media screen  and (max-width: 480px){
+  .messages__area{
+    max-height: 490px;
+  }
+}
+
+#send{
+  font-size: 30px;
 }

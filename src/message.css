@@ -4,7 +4,7 @@
 #message{
     margin: 15px;
     width: fit-content;
-    max-width: 300px;
+    max-width: 370px;
 }
 
 .user_message{
@@ -89,6 +89,12 @@ p {
     border-right: 16px solid transparent;
     bottom: -1px;
     right: -17px;
+}
+
+@media screen  and (max-width: 768px){
+    #message{
+        max-width: 250px;
+    }
 }
 
 
